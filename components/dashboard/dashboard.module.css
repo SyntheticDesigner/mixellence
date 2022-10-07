@@ -1,0 +1,118 @@
+.dashSaveBtn {
+  width: min(364px, 100%);
+  max-width: 80vw;
+  height: 55px;
+  margin: auto;
+  border-radius: 10px;
+  color: var(--bg-light);
+  background-color: var(--brand);
+  border: none;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  margin-top: 38px;
+  font: var(--desk-title2);
+  transition: all 0.3s;
+  align-self: center;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.dashSaveBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow2);
+}
+.dashSaveBtn:active {
+  transform: translateY(0px);
+  box-shadow: var(--shadow);
+}
+
+.deleteBtn {
+  position: absolute;
+  background-color: var(--brand);
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  right: 0px;
+  top: 32px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+  z-index: 3;
+}
+
+.deleteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow2);
+  outline: 2px solid white;
+}
+.deleteBtn:active {
+  transform: translateY(2px);
+  box-shadow: var(--shadow);
+}
+
+.deleteConfirm {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmBg {
+  background-color: rgba(0, 0, 0, 0.808);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  height: 100%;
+  width: 110%;
+  position: absolute;
+  z-index: -1;
+}
+
+.input {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.input input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--bg-light);
+  color: var(--font-dark);
+  font: var(--desk-testimonial-body);
+  height: 55px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  border: solid 1px var(--bg-dark);
+  padding-left: 8px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.input input:focus {
+  outline: 2px solid var(--brand-4);
+}
+
+.input:focus-within label {
+  color: var(--brand-4);
+}
+.input p {
+  font: var(--desk-testimonial-secondary);
+  opacity: 50%;
+  margin-bottom: 8px;
+}
+
+.btnDisabled {
+  pointer-events: none;
+  background-color: var(--brand-dark);
+  color: var(--inactive);
+}

@@ -1,0 +1,11 @@
+.disabledBtn {
+  background-color: var(--brand-dark);
+  color: var(--inactive);
+  pointer-events: none;
+}
+.successBtn {
+  background-color: var(--success) !important;
+}
+.errorBtn {
+  background-color: var(--error) !important;
+}

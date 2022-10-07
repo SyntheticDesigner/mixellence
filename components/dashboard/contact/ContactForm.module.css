@@ -1,0 +1,163 @@
+.dashFormContainer {
+  background-color: var(--bg-dark);
+}
+
+.dashFormContainer form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 64px;
+}
+
+.dashWelcome {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 0.5px rgb(74, 73, 73);
+  width: 100%;
+  margin-bottom: 5%;
+  background-color: var(--bg-navbar);
+}
+
+.dashWelcome h1 {
+  color: white;
+  font-size: 48px;
+  margin-left: 10%;
+  padding-top: 22px;
+  padding-bottom: 16px;
+  font: var(--desk-navbar1);
+}
+
+.dashContactInfoTitle {
+  padding-top: 28px;
+  color: var(--bg-light);
+  font: var(--desk-title2);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  width: 80%;
+  margin-bottom: 32px;
+}
+
+.dashContactInputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  width: 80%;
+  margin: auto;
+  border-style: none;
+  background-color: var(--bg-dark);
+  color: var(--font-light);
+  font: var(--desk-body);
+}
+
+.dashContactContainerLeft {
+  width: 45%;
+}
+
+.dashInput input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 55px;
+  width: 100%;
+  font: var(--desk-testimonial-body);
+  border: none;
+  outline: none;
+  color: var(--font-dark);
+  padding-left: 8px;
+}
+
+.dashInput input:focus {
+  outline: 2px solid var(--brand-4);
+}
+.dashInput:focus-within label {
+  color: var(--brand-4);
+}
+
+.logout {
+  margin-left: auto;
+  margin-right: 10%;
+  width: 190px;
+  height: 55px;
+  border-radius: 10px;
+  border-style: none;
+  color: var(--font-light);
+  background-color: var(--brand);
+  font: var(--desk-title2);
+  transition: transform 0.3s;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.logout:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow2);
+}
+.logout:active {
+  transform: translateY(0px);
+  box-shadow: var(--shadow);
+}
+
+.logout h1 {
+  display: flex;
+
+  align-items: center;
+}
+
+.inputWrapper {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.inputWrapper button {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  right: 16px;
+}
+
+.inputWrapper button:hover {
+  outline: 2px solid var(--brand);
+  border-radius: 50%;
+}
+
+/* ///////////////////////// */
+
+.dashSocialMediaContainerRight {
+  width: 45%;
+}
+
+@media (max-width: 880px) {
+  .dashContactInputContainer {
+    flex-direction: column;
+  }
+  .dashInput {
+    width: 100%;
+  }
+  .dashContactContainerLeft {
+    width: 100%;
+  }
+  .dashSocialMediaContainerRight {
+    width: 100%;
+  }
+  .dashWelcome {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .dashWelcome h1 {
+    margin: 0;
+  }
+  .logout {
+    margin: 0;
+    /* margin-bottom: 40px; */
+  }
+}

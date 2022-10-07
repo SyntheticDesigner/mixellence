@@ -1,0 +1,65 @@
+.selectorContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.selectorContainer select {
+  border: none;
+  outline: none;
+  font-size: 17px;
+  background-color: var(--bg-input);
+  height: 30px;
+  width: 100%;
+  box-shadow: var(--shadow-inset);
+  padding: 0px 8px;
+  /*The commented out lines here are responsible
+  for hiding or revealing the default arrow*/
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+}
+
+/*The commented out lines here are ALSO responsible
+  for hiding or revealing the default arrow, each
+  one is responsible for handling a different browser*/
+
+/* .selectorContainer select::-ms-expand {
+  display: none;
+} */
+
+.selectorContainer select:focus {
+  outline: 1px solid var(--brand);
+}
+
+.selectorContainer label {
+  font: var(--desk-testimonial-body);
+  color: var(--font-dark);
+  pointer-events: default;
+}
+
+.selectorContainer:focus-within label {
+  color: var(--brand);
+}
+
+.selectorContainer select option {
+  background-color: var(--bg-input);
+}
+/*the following class selectors are for a arrow image
+if you are not using the default*/
+.arrow {
+  height: fit-content;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.selectorContainer:focus-within .arrow svg path {
+  stroke: var(--brand-color);
+  stroke-opacity: 1;
+}

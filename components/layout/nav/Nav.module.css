@@ -1,0 +1,152 @@
+.navWrapper {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 4;
+  background-color: var(--bg-navbar);
+}
+
+.navWrapper nav {
+  width: 90%;
+  height: 100%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.navMenu {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.navMenu button {
+  background: none;
+  border: none;
+  color: var(--font-light);
+  font: var(--desk-navbar);
+  cursor: pointer;
+}
+
+.navMenu button:hover {
+  background: none;
+  border: none;
+  color: var(--brand-3);
+  text-decoration: underline;
+}
+
+.navBtn {
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: fixed;
+  top: 45px;
+  right: 32px;
+  z-index: 5;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.navBtn:hover {
+  background-color: var(--bg-navbar);
+}
+
+.navBtn div {
+  height: 4px;
+  border-radius: 2px;
+  width: 28px;
+  background-color: var(--font-light);
+  transition: all 0.5s;
+}
+
+.btnOpen .top {
+  position: absolute;
+  transform: rotate(45deg);
+}
+.btnOpen .mid {
+  position: absolute;
+  transform: rotate(135deg);
+}
+.btnOpen .bot {
+  display: none;
+}
+
+.navLogoMobile {
+  display: none;
+  cursor: pointer;
+}
+
+.backdrop {
+  display: none;
+}
+
+.navLogo {
+  cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  .navBtn {
+    /* display: inline; */
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navWrapper {
+    opacity: 1;
+    height: 100vh;
+    width: 100%;
+    right: 0px;
+    backdrop-filter: blur(4px);
+    background: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+  .navWrapper nav {
+    width: 60%;
+    background-color: var(--bg-navbar);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out;
+  }
+  .navLogo {
+    display: none;
+  }
+  .navLogoMobile {
+    display: block;
+  }
+  .navMenu {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    margin-top: 120px;
+  }
+  .backdrop {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.283);
+  }
+  .navOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navOpen nav {
+    transform: translateX(0);
+  }
+}

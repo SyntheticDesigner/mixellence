@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-dark: #412779;
+  --brand: #55339e;
+  --brand-1: #5f36b5; /*Lighter shades of the brand color*/
+  --brand-2: #6e3fd2; /*...*/
+  --brand-3: #854dfd; /*...*/
+  --brand-4: #af8aff; /*...*/
+
+  --success: #05c473;
+  --warning: #ffe16a;
+  --error: #ff3333;
+  --inactive: #bebebe;
+  --link: #00a3ff;
+
+  --bg-navbar: #000000;
+  --bg-dark: #111111;
+  --bg-light: #ffffff;
+  --bg-input: #f7f7f7;
+
+  --font-light: #ffffff;
+  --font-dark: #111111;
+
+  --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow2: 0px 5px 6px rgba(0, 0, 0, 0.3);
+  --shadow3: 3px 4px 3px rgba(0, 0, 0, 0.4);
+  --shadow-inset: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+  --desk-title: 600 64px "Jost", sans-serif;
+  --desk-title1: 400 36px "Jost", sans-serif;
+  --desk-title2: 400 28px "Jost", sans-serif;
+  --desk-title3: 500 24px "Jost", sans-serif;
+  --desk-title4: italic 24px "Jost", sans-serif;
+  --desk-title5: 400 32px "Jost", sans-serif;
+  --desk-carousel: 400 38px "Jost", sans-serif;
+  --desk-navbar: 400 20px "Jost", sans-serif;
+  --desk-navbar1: 400 48px "Jost", sans-serif;
+  --desk-body: 300 20px "Jost", sans-serif;
+  --desk-body2: 300 22px "Jost", sans-serif;
+
+  --desk-testimonial-name: 600 26px "Jost", sans-serif;
+  --desk-testimonial-body: 400 18px "Jost", sans-serif;
+  --desk-testimonial-secondary: 300 16px "Jost", sans-serif;
+
+  --mobile-title: 500 56px "Jost", sans-serif;
+  --mobile-heading: 400 22px "Jost", sans-serif;
+  --mobile-navbar: 400 22px "Jost", sans-serif;
+  --mobile-footer: 300 18px "Jost", sans-serif;
+  --mobile-testimonial-name: 600 18px "Jost", sans-serif;
+  --mobile-testimonial-body: 400 16px "Jost", sans-serif;
+  --mobile-body: 300 16px "Jost", sans-serif;
+  --mobile-testimonial-secondary: 300 14px "Jost", sans-serif;
+  --mobile-title1: 500 22px "Jost", sans-serif;
+
+  --button-bold: 500 16px "Jost", sans-serif;
+}
+
+@media (max-width: 680px) {
+  :root {
+    --desk-title: var(--mobile-title);
+    --desk-navbar: var(--mobile-navbar);
+    --desk-body: var(--mobile-body);
+    --desk-testimonial-name: var(--mobile-testimonial-name);
+    --desk-testimonial-body: var(--mobile-testimonial-body);
+    --desk-title1: var(--mobile-title1);
+    --desk-body2: 300 22px "Jost", sans-serif;
+    --desk-title4: italic 24px "Jost", sans-serif;
+    --desk-title5: var(--mobile-heading);
+  }
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: black;
+}

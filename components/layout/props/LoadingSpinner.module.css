@@ -1,0 +1,14 @@
+.loadingSpinner {
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 39px;
+  width: 39px;
+  margin: auto;
+}
+
+.loadingSpinner div {
+  position: absolute;
+  display: grid;
+  place-items: center;
+}

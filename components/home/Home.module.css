@@ -1,0 +1,28 @@
+.homeWrapper{
+  overflow-x: hidden;
+}
+.btn {
+  width: 190px;
+  border: none;
+  height: 55px;
+  margin: auto;
+  border-radius: 10px;
+  color: var(--bg-light);
+  background-color: var(--brand);
+  border: none;
+  box-shadow: var(--shadow);
+  font: var(--desk-title2);
+  transition: all 0.3s;
+  align-self: center;
+  cursor: pointer;
+  /* align-self: center; */
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow2);
+}
+.btn:active {
+  transform: translateY(0px);
+  box-shadow: var(--shadow);
+}

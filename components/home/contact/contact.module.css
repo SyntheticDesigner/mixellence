@@ -1,0 +1,138 @@
+.contactArea {
+  background-color: var(--bg-dark);
+  color: var(--font-light);
+  padding-bottom: 32px;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.decal {
+  width: 90%;
+  max-width: 1120px;
+  margin: -1px auto;
+}
+
+.contactArea h2 {
+  font: var(--desk-title1);
+}
+.contactArea form {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  margin-top: 8vh;
+}
+
+.contactArea hr {
+  border: none;
+  background-color: var(--brand);
+  height: 3px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: max(10%, 16px);
+  margin-bottom: 24px;
+}
+
+.input {
+  font: var(--desk-navbar);
+  /* margin-bottom: 20px; */
+}
+
+.bottomRow {
+  width: 100%;
+  font: var(--desk-navbar);
+  margin-bottom: 40px;
+}
+
+.bottomRow label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.bottomRow textArea {
+  font: var(--desk-testimonial-body);
+  padding: 8px;
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: var(--bg-input);
+  box-shadow: var(--shadow-inset);
+}
+
+.bottomRow textarea:focus {
+  outline: 2px solid var(--brand-3);
+}
+
+.bottomRow:focus-within label {
+  color: var(--brand-3);
+}
+
+.sendBtn {
+  width: 190px;
+  border: none;
+  height: 55px;
+  margin: auto;
+  border-radius: 10px;
+  color: var(--bg-light);
+  background-color: var(--brand);
+  border: none;
+  box-shadow: var(--shadow);
+  font: var(--desk-title2);
+  transition: all 0.3s;
+  align-self: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow2);
+}
+.sendBtn:active {
+  transform: translateY(0px);
+  box-shadow: var(--shadow);
+}
+
+.disabledBtn {
+  background-color: var(--brand-dark);
+  color: var(--inactive);
+  pointer-events: none;
+}
+
+.successBtn {
+  background-color: var(--success);
+}
+.errorBtn {
+  background-color: var(--error);
+}
+
+@media (max-width: 560px) {
+  .topRow {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 930px) {
+  .decal {
+    width: fit-content;
+    margin: auto;
+  }
+}

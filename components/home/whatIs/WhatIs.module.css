@@ -1,0 +1,64 @@
+.outerContainer {
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-light);
+}
+
+.whatIsSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+  padding-top: max(4%, 32px);
+  padding-bottom: max(6%, 44px);
+  width: 90%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.whatIsTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+}
+.whatIsTitle {
+  font: var(--desk-title1);
+}
+
+.underline {
+  align-items: left;
+  height: 4px;
+  border: none;
+  width: 50%;
+  min-width: 220px;
+  background-color: var(--brand);
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.whatIsPhoto {
+  width: 412px;
+  max-width: 100%;
+}
+
+.whatIsBody {
+  font: var(--desk-body);
+}
+
+.whatIsBody p {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 880px) {
+  .whatIsSection {
+    flex-direction: column-reverse;
+  }
+  .whatIsTextWrapper {
+    margin-top: 4%;
+    width: 100%;
+    align-items: center;
+  }
+}

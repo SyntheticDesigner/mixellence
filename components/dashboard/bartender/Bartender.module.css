@@ -1,0 +1,198 @@
+.bartenderContainer {
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 64px;
+}
+
+.whitespace {
+  height: 54px;
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+.bartenderTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-style: none;
+  color: var(--bg-light);
+  font: var(--desk-title2);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 80%;
+}
+
+.bartenderLayout {
+  display: flex;
+  flex-direction: row;
+  border-style: none;
+  width: 80%;
+  color: var(--bg-light);
+  font: var(--desk-body);
+  gap: 32px;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* TODO the margin is not equal between all forms either max() the margin or try grid */
+.bartenderLayout form {
+  margin-right: auto;
+  width: 364px;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.bartenderTextArea {
+  width: 100%;
+}
+
+.textArea {
+  padding: 8px;
+  padding-top: 32px;
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 230px;
+  font: var(--desk-testimonial-body);
+}
+
+.bartenderName {
+  padding-top: 28px;
+  padding-bottom: 24px;
+  color: var(--bg-light);
+  font: var(--desk-title3);
+}
+
+.bartenderImage {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.bartenderPhoto {
+  border-radius: 90px;
+}
+
+.bartenderInput {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.bartenderInput input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--bg-light);
+  color: var(--font-dark);
+  font: var(--desk-testimonial-body);
+  height: 55px;
+  width: 100%;
+  border: solid 1px var(--bg-dark);
+  padding-left: 8px;
+  border: none;
+  outline: none;
+}
+
+.bartenderInput input:focus {
+  outline: 2px solid var(--brand-4);
+}
+
+.bartenderInput:focus-within label {
+  color: var(--brand-4);
+}
+
+.bartenderTextArea textArea:focus {
+  outline: 2px solid var(--brand-4);
+}
+
+.bartenderTextArea label {
+  display: block;
+}
+
+.bartenderTextArea p {
+  font: var(--desk-testimonial-secondary);
+  opacity: 50%;
+  margin-bottom: 8px;
+}
+
+.bartenderTextArea:focus-within label {
+  color: var(--brand-4);
+}
+
+.images {
+  display: flex;
+  gap: 16px;
+}
+
+.images image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.inputWrapper {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.inputWrapper button {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  right: 16px;
+}
+
+.inputWrapper button:hover {
+  outline: 2px solid var(--brand);
+  border-radius: 50%;
+}
+
+.textAreaWrapper {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.textAreaWrapper button {
+  position: absolute;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  top: 16px;
+  right: 16px;
+}
+
+.textAreaWrapper button:hover {
+  outline: 2px solid var(--brand);
+  border-radius: 50%;
+}
+
+@media (max-width: 950px) {
+  .bartenderLayout {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bartenderLayout form {
+    margin-right: 0;
+    width: 90%;
+  }
+}

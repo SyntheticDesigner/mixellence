@@ -1,0 +1,105 @@
+.inputField {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputField input {
+  border: none;
+  outline: none;
+  font-size: 17px;
+  background-color: var(--bg-input);
+  height: 30px;
+  width: 100%;
+  box-shadow: var(--shadow-inset);
+  padding-left: 8px;
+}
+
+.inputError input {
+  outline: 1px solid var(--error);
+}
+
+.inputField:focus-within input {
+  outline: 1px solid var(--brand-2);
+}
+
+.charLimit {
+  color: var(--brand-4);
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  opacity: 0;
+  font: var(--mobile-testimonial-secondary);
+}
+
+.inputError .charLimit {
+  opacity: 1;
+}
+
+.inputField:focus-within .charLimit,
+.inputField:focus-within .charLimit {
+  opacity: 1;
+}
+
+.errorText {
+  color: var(--error);
+  font: var(--desk-testimonial-secondary);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform: translateY(calc(100% + 2px));
+}
+
+.revealBtn {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 12px;
+  bottom: 4px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.revealBtn:hover {
+  outline: 1px solid var(--brand-2);
+}
+
+/*The active and inactive classes are applied to the LABEL
+this allows for transforming the position and style of the
+label based on the state of the input*/
+.inactive {
+  pointer-events: default;
+  transition: all 0.3s;
+  margin-bottom: 4px;
+}
+
+.active {
+  pointer-events: default;
+  position: relative;
+}
+
+.inputField:focus-within .inactive,
+.inputField:focus-within .active {
+  color: var(--brand-3);
+  pointer-events: default;
+}
+
+.inputError .active,
+.inputError .inactive {
+  color: var(--error);
+}
+
+.inputError:focus-within .active,
+.inputError:focus-within .inactive {
+  color: var(--error);
+}
+
+/*End of label styles*/
