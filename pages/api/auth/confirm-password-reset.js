@@ -1,7 +1,6 @@
 import { confirmPassword } from "../../../utils/firebaseSDK/firebaseAuth";
 
 const handler = (req, res) => {
-  console.log(req.body);
   const { code } = req.body;
   const data = confirmPassword(code);
   if (data.error) {

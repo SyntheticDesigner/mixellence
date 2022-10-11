@@ -12,24 +12,35 @@ const LoadingBtn = ({
   loading,
   submitted,
   error,
+  onClick,
 }) => {
-
   return (
     <button
       type={type}
       className={clsx(
         className && className,
         disabled && classes.disabledBtn,
-        (!loading && submitted) && (error ? classes.errorBtn : classes.successBtn)
+        !loading && submitted && (error ? classes.errorBtn : classes.successBtn)
       )}
+      onClick={onClick ? onClick : null}
     >
       {loading ? (
         <LoadingSpinner />
       ) : submitted ? (
         error ? (
-          <Image src='/images/icons/error.svg' alt="error" height={35} width={35} />
+          <Image
+            src='/images/icons/error.svg'
+            alt='error'
+            height={35}
+            width={35}
+          />
         ) : (
-          <Image src='/images/icons/success.svg' alt="success" height={35} width={35} />
+          <Image
+            src='/images/icons/success.svg'
+            alt='success'
+            height={35}
+            width={35}
+          />
         )
       ) : (
         value

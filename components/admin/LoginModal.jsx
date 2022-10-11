@@ -7,12 +7,11 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { setCookie } from "../../utils/clientUtil";
 import LoadingSpinner from "../layout/props/LoadingSpinner";
-import ResetPassword from "./ResetPassword";
+import LoadingBtn from "../layout/props/LoadingBtn";
 
 const LoginModal = ({ setModal }) => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState(
     emailRef.current ? emailRef.current.value : ""
   );
@@ -24,6 +23,10 @@ const LoginModal = ({ setModal }) => {
   const [emailTimeout, setEmailTimeout] = useState(null);
   const [resetPassword, setResetPassword] = useState(false);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [to, setTo] = useState();
 
   const validBtnClass =
     password.length && email.length && !emailError.length
@@ -48,6 +51,21 @@ const LoginModal = ({ setModal }) => {
       return false;
     }
   };
+
+  useEffect(() => {
+    if (submitted) {
+      let _to = setTimeout(() => {
+        setSubmitted(false);
+        if (!error) {
+          setResetPassword(false);
+        } else {
+          setError(false);
+        }
+      }, 5000);
+      setTo(_to);
+    }
+    return clearTimeout(to);
+  }, [submitted]);
 
   const validatePassword = async () => {
     const response = await fetch("/api/auth/sign-in", {
@@ -85,7 +103,7 @@ const LoginModal = ({ setModal }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1300);
+    }, 5000);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -101,58 +119,93 @@ const LoginModal = ({ setModal }) => {
       setLoading(false);
     }
   };
-  const handleRestSubmit = async (e) => {
+  const handleResetSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = await fetch("/api/auth/reset-password", {
+    const result = await fetch("/api/auth/reset-password", {
       method: "POST",
       body: JSON.stringify({ email }),
     });
+    let data = await result.json();
     if (data.error) {
+      setSubmitted(true);
       setLoading(false);
-      console.log(data.error);
-      alert("Failure");
+      setError(true);
+      console.log(data);
     } else {
+      setSubmitted(true);
       setLoading(false);
-      setResetPassword(false);
-      console.log(data.message);
-      alert("Check your email and spam");
+      setError(false);
     }
   };
   return createPortal(
     <div className={classes.modalBg}>
-      <div className={classes.backDrop} onClick={() => setModal(false)} />
-      {loading ? (
-        <div className={classes.loadingSpinner}>
-          <LoadingSpinner />
-        </div>
-      ) : resetPassword ? (
-        <form className={classes.loginModal} onSubmit={handleRestSubmit}>
+      <div
+        className={classes.backDrop}
+        onClick={() => {
+          setResetPassword(false);
+          setModal(false);
+        }}
+      />
+      {resetPassword ? (
+        <form className={classes.loginModal} onSubmit={handleResetSubmit}>
           <button
             type='button'
             className={classes.closeBtn}
-            onClick={() => setModal(false)}
+            onClick={() => {
+              setResetPassword(false);
+            }}
           >
-            <Image src='/images/icons/close.svg' alt="close" height={17} width={17} />
+            <Image
+              src='/images/icons/close.svg'
+              alt='close'
+              height={17}
+              width={17}
+            />
           </button>
           <h2>Reset Password</h2>
           <hr />
 
-          <InputField
-            label='Email'
-            value={email}
-            setValue={setEmail}
-            className={classes.adminInput}
-            errors={emailError}
-            inputRef={emailRef}
-          />
-          <button
-            type='submit'
+          {submitted && !error ? (
+            <div style={{ textAlign: "center", font: "var(--desk-body)" }}>
+              <b>
+                An email has been sent please follow the steps to reset you
+                password
+              </b>
+              <br />
+              <br />
+              <p>(If you do not see it check your spam folder)</p>
+            </div>
+          ) : submitted && error ? (
+            <div style={{ textAlign: "center", font: "var(--desk-body)" }}>
+              <b>
+                There was an error sending the reset password email. <br />
+                Double check your email. <br /> <br />If the error persists contact
+                your web admin.
+              </b>
+            </div>
+          ) : (
+            <InputField
+              label='Email'
+              value={email}
+              setValue={setEmail}
+              className={classes.adminInput}
+              errors={emailError}
+              inputRef={emailRef}
+            />
+          )}
+          <LoadingBtn
+            value='Enter'
             className={clsx(classes.loginBtn, validBtnClass)}
-          >
-            Enter
-          </button>
+            loading={loading}
+            submitted={submitted}
+            error={error}
+          />
         </form>
+      ) : loading ? (
+        <div className={classes.loadingSpinner}>
+          <LoadingSpinner />
+        </div>
       ) : (
         <form className={classes.loginModal} onSubmit={handleSubmit}>
           <button
@@ -160,7 +213,12 @@ const LoginModal = ({ setModal }) => {
             className={classes.closeBtn}
             onClick={() => setModal(false)}
           >
-            <Image src='/images/icons/close.svg' alt="close" height={17} width={17} />
+            <Image
+              src='/images/icons/close.svg'
+              alt='close'
+              height={17}
+              width={17}
+            />
           </button>
           <h2>Administrator login</h2>
           <hr />

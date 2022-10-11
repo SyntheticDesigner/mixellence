@@ -32,9 +32,8 @@ export const signIn = async (email, password) => {
 };
 
 export const resetPassword = async (email) => {
-  console.log("INAUTH", email);
   try {
-    sendPasswordResetEmail(auth, email);
+    await sendPasswordResetEmail(auth, email);
     return { message: "Password reset email was sent." };
   } catch (err) {
     return { error: err.message, errorCode: err.code };

@@ -118,7 +118,10 @@ function BartenderForm({ bartender, update }) {
             fontSize: "36px",
             backdropFilter: "blur(4px)",
           }}
-          onClick={() => setError(false)}
+          onClick={() => {
+            setSubmitted(false);
+            setError(false);
+          }}
         >
           {errorText}
         </div>

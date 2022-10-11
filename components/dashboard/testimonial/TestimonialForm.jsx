@@ -126,7 +126,10 @@ function TestimonialForm({ testimonial, update }) {
             "-webkit-backdrop-filter": "blur(4px)",
             backdropFilter: "blur(4px)",
           }}
-          onClick={() => setError(false)}
+          onClick={() => {
+            setSubmitted(false);
+            setError(false);
+          }}
         >
           {errorText}
         </div>
