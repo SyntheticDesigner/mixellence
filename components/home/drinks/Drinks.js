@@ -10,21 +10,21 @@ const drinks = {
     id: "paloma",
     image: { url: "/images/drinks/paloma.png" },
     description:
-      "Tequila, lime juice, and your favorite brand of grapefruit flavored soda. This refreshing cocktail will have your guests lining up for more.",
+      "Tequila, freshly squeezed lime juice, and freshly squeezed grapefruit juice.  topped with lime soda and a lime wheel garnish.",
   },
   mojito: {
     name: "Mojito",
     id: "mojito",
     image: { url: "/images/drinks/mojito.png" },
     description:
-      "AKA The Cuban Highball. Another popular one with our clients. White rum, sugar, lime juice, soda water, and mint. A timeless classic.",
+      "AKA The Cuban Highball. Another popular one with our clients. White rum, sugar, freshly squeezed lime juice, soda water, mint and a lime wheel  garnish. A timeless classic.",
   },
   margarita: {
     name: "Margarita",
     id: "margarita",
     image: { url: "/images/drinks/margarita.png" },
     description:
-      "The classic margarita. Tequila, triple sec, and lime juice. Shaken with ice or blended if you prefer. Oh and we won’t forgot to salt the rim for you.",
+      "The classic margarita. Tequila, triple sec, and freshly squeezed lime juice with a lime wheel garnish. Shaken with ice or blended if you prefer. Oh and we won’t forget to salt the rim for you.",
   },
 };
 
